@@ -2,12 +2,12 @@
 // A variable is a named identifier that lets you access a value in your program.
 
 // Imagine you're building a website for a student. You need to store the student's name, age, and marks so you can use those values later.
-// let studentName = "Jagan";
-// let age = 20;
-// let marks = 85;
-// console.log(studentName);
-// console.log(age);
-// console.log(marks);
+let studentName = "Jagan";
+let age = 20;
+let marks = 85;
+console.log(studentName);
+console.log(age);
+console.log(marks);
 
 // Output:
 // Jagan
@@ -82,11 +82,11 @@ var $firstName = "abdul"; // dollar sign included
 
 // For example:
 
-// const student = {
-//   name: "Jagan"
-// };
-// student.name = "Arun";
-// console.log(student.name);
+const student = {
+  name: "Jagan"
+};
+student.name = "Arun";
+console.log(student.name);
 
 // Output:
 // Arun
