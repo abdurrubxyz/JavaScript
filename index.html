@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .color {
+        background-color: lightgreen;
+      }
+      .removeAll-btn {
+        padding: 10px;
+        background-color: green;
+        color: white;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
     <section class="">
@@ -11,7 +22,8 @@
         <div class="heading">
           <h1 id="title">Tasks</h1>
         </div>
-
+        <input type="text" />
+        <button class="add-task">Add Task</button>
         <ul class="collections">
           <li class="collection-item">
             class item 1
@@ -57,9 +69,11 @@
           </li>
         </ul>
 
-
+        <button class="removeAll-btn">remove all task</button>
+        <button class="btn-bg-change">change backgroung color</button>
       </div>
     </section>
-    <script src="./14-dom/6-remove-element.js"></script>
+
+    <script src="./14-dom/9-keyboard-events.js"></script>
   </body>
 </html>
