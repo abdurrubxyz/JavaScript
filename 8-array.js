@@ -35,6 +35,8 @@ let fruits = ["apple", "orange", "kiwi", "banana"];
 fruits.splice(2,1)
 fruits.splice(2,0,"goa")
 
+console.log(fruits)
+
 // reverse
 fruits.reverse()
 
