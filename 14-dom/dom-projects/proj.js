@@ -2,10 +2,10 @@ let form = document.querySelector("#task-form");
 let input = document.querySelector("#task");
 let lists = document.querySelector(".collection");
 let clearAll = document.querySelector("#clear-all");
+let search = document.querySelector("#search");
 
 // run this all events
 function runThisAll() {
-  // console.log("start");
   document.addEventListener("DOMContentLoaded", domReload);
 
   form.addEventListener("submit", addTask);
@@ -13,6 +13,8 @@ function runThisAll() {
   clearAll.addEventListener("click", funClearALl);
 
   lists.addEventListener("click", removeTheElement);
+
+  search.addEventListener("keyup", searchTheTask);
 }
 
 function domReload() {
@@ -155,6 +157,25 @@ function funClearALl() {
 // remove form ls
 function clearFormLs() {
   localStorage.removeItem("task");
+}
+
+// searchTheTask
+function searchTheTask(e) {
+  const valuetext = e.target.value.toLowerCase();
+
+  const allLi = document.querySelectorAll(".collection-item");
+
+  allLi.forEach(function (allLists) {
+    let item = allLists.innerText;
+
+    if(item.toLowerCase().indexOf(valuetext) != -1) {
+      allLists.style.display = "block";
+    }
+    else {
+      allLists.style.display = "none";
+    }
+  });
+
 }
 
 runThisAll();
