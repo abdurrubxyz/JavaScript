@@ -16,7 +16,7 @@ console.log(person1.add());
 console.log(person2);
 console.log(person2.add());
 
-// ES6
+// // ES6
 // class Person{
 //     constructor(a,b) {
 //         this.number1 = a;
