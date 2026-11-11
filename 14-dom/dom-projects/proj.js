@@ -108,7 +108,7 @@ function storeTheTaskInLs(thatInputValue) {
 }
 // storeTheTaskInLs()
 
-// remove each item
+// Clear each item
 function removeTheElement(e) {
   // if(e.target.parentElement.className = "delete-item secondary-content test"){
   //     if(confirm("Are you sure u want to delete")){
@@ -145,7 +145,7 @@ function removeTheTaskFromLs(taslElement) {
   localStorage.setItem("task", JSON.stringify(task));
 }
 
-// removeall
+// ClearAll
 function funClearALl() {
   lists.innerHTML = "";
 
