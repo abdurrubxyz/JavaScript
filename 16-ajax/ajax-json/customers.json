@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "abdurrub",
+    "age": "21",
+    "city": "Trichy",
+    "state": "Tamil nadu",
+    "phone": "9443562589"
+  },
+  {
+    "id": 2,
+    "name": "jayaram",
+    "age": "21",
+    "city": "Trichy",
+    "state": "Tamil nadu",
+    "phone": "9442408268"
+  },
+  {
+    "id": 3,
+    "name": "hari vasanth",
+    "age": "21",
+    "city": "Chennai",
+    "state": "Tamil nadu",
+    "phone": "7483743883"
+  },
+  {
+    "id": 4,
+    "name": "ravi kumar",
+    "age": "26",
+    "city": "salem",
+    "state": "Tamil nadu",
+    "phone": "8435456948"
+  }
+]
