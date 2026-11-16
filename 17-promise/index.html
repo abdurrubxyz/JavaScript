@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   function promise() {
+      //     return new Promise(function (resolve, reject) {
+      //       const sum = 1 + 1;
+
+      //       if (sum === 2) {
+      //         resolve({
+      //           id: 1,
+      //           name: "abdurrub",
+      //           age: 21,
+      //           city: "Trichy",
+      //         });
+      //       } else {
+      //         reject("Error");
+      //       }
+      //     });
+      //   }
+
+      //   promise().then((msg)=>{
+      //     console.log(msg);
+      //   }).catch((errorMsg)=>{
+      //     console.log(console.error(errorMsg));
+      //   }).finally(()=>{
+      //     console.log("you got it")
+      //   })
+
+      // let jai = new Promise(function (resolve,reject) {
+      //   let store = true
+      //   if (store) {
+      //     resolve("its true")
+      //   }
+      //   else {
+      //     reject("No data")
+      //   }
+      // });
+
+      // jai.then(function (msg) {
+      //   console.log(msg)
+      // }).catch( function (error) {
+      //   console.error(error)
+      // }).finally(function () {
+      //   console.log("its your data ")
+      // })
+
+      // console.log(jai);
+
+      function getJai() {
+        return new Promise((resolve, reject) => {
+          let store = true;
+          if (store) {
+            resolve("its true");
+          } else {
+            reject("No data");
+          }
+        });
+      }
+
+      getJai()
+        .then((msg) => {
+          console.log(msg);
+        })
+        .catch((errorMsg) => {
+          console.log(errorMsg);
+        })
+        .finally(() => {
+          console.log("your data is here");
+        });
+    </script>
+  </body>
+</html>
