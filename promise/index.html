@@ -7,71 +7,47 @@
   </head>
   <body>
     <script>
-      //   function promise() {
-      //     return new Promise(function (resolve, reject) {
-      //       const sum = 1 + 1;
+      let obj = [];
 
-      //       if (sum === 2) {
-      //         resolve({
-      //           id: 1,
-      //           name: "abdurrub",
-      //           age: 21,
-      //           city: "Trichy",
-      //         });
-      //       } else {
-      //         reject("Error");
-      //       }
-      //     });
-      //   }
-
-      //   promise().then((msg)=>{
-      //     console.log(msg);
-      //   }).catch((errorMsg)=>{
-      //     console.log(console.error(errorMsg));
-      //   }).finally(()=>{
-      //     console.log("you got it")
-      //   })
-
-      // let jai = new Promise(function (resolve,reject) {
-      //   let store = true
-      //   if (store) {
-      //     resolve("its true")
-      //   }
-      //   else {
-      //     reject("No data")
-      //   }
-      // });
-
-      // jai.then(function (msg) {
-      //   console.log(msg)
-      // }).catch( function (error) {
-      //   console.error(error)
-      // }).finally(function () {
-      //   console.log("its your data ")
-      // })
-
-      // console.log(jai);
-
-      function getJai() {
+      function createPost(data) {
         return new Promise((resolve, reject) => {
-          let store = true;
-          if (store) {
-            resolve("its true");
-          } else {
-            reject("No data");
-          }
+          setTimeout(() => {
+            if (data) {
+              obj.push(data);
+              resolve();
+            } else {
+              reject("Failed to create post!");
+            }
+          }, 3000);
         });
       }
 
-      getJai()
-        .then((msg) => {
-          console.log(msg);
+      function getPost() {
+        setTimeout(() => {
+          let output = "";
+
+          obj.forEach((e) => {
+            output += `
+      <li>${e.id}</li>
+      <li>${e.name}</li>
+      <li>${e.age}</li>
+      `;
+          });
+
+          document.body.innerHTML = output;
+        }, 1000);
+      }
+
+      createPost({
+        id: 1,
+        name: "abdurrub",
+        age: 21,
+      })
+        .then(() => {
+          getPost();
         })
-        .catch((errorMsg) => {
-          console.log(errorMsg);
-        })
-        .finally(() => {
-          console.log("your data is here");
+        .catch((error) => {
+          console.log(error);
         });
     </script>
   </body>

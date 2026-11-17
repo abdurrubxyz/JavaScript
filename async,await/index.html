@@ -1,50 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        function getData() {
+      //   function getData() {
+      //     return new Promise((resolve, reject) => {
+      //       let internetConneted = true;
+      //       setTimeout(() => {
+      //         if (internetConneted) {
+      //           console.log("Data is received successfully");
+      //         } else {
+      //           console.log("Internet connection failed!");
+      //         }
+      //       }, 3000);
+      //     });
+      //   }
 
-            return new Promise((resolve, reject) => {
-                let internetConneted = true;
+      //   async function fetchData() {
+      //     try {
+      //       console.log("Data is fetching....!");
+      //       const data = await getData();
+      //       console.log(data);
+      //     } catch (error) {
+      //       console.log("Error :", error);
+      //     }
+      //   }
+      //   fetchData();
 
-                setTimeout(() => {
-                    if (internetConneted) {
-                    console.log("Data is received successfully");
-                }
+      let obj = [];
 
-                else {
-                    console.log("Internet connection failed!");
-                }
-                }, 3000);
-
-            });
-
-        }
-
-        async function fetchData() {
-
-            try {
-                console.log("Data is fetching....!");
-
-                const data = await getData();
-
-                console.log(data);
+      function createPost(data) {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (data) {
+              obj.push(data);
+              resolve();
+            } else {
+              reject("Failed to create post!");
             }
+          }, 3000);
+        });
+      }
 
-            catch (error) {
-                console.log("Error :", error);
-            }
+      function getPost() {
+        setTimeout(() => {
+          let output = "";
 
+          obj.forEach((e) => {
+            output += `
+      <li>${e.id}</li>
+      <li>${e.name}</li>
+      <li>${e.age}</li>
+      `;
+          });
+
+          document.body.innerHTML = output;
+        }, 1000);
+      }
+
+      async function handlePost() {
+        try {
+            await createPost({
+                id: 1,
+                name: "abdurrub",
+                age: 21
+            })
+
+            await getPost();
         }
+        catch (errorMsg) {
+            console.log(errorMsg)
+        }
+      }
 
-        fetchData();
-
-        
+      handlePost()
     </script>
-</body>
+  </body>
 </html>
