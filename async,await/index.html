@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getData() {
+
+            return new Promise((resolve, reject) => {
+                let internetConneted = true;
+
+                setTimeout(() => {
+                    if (internetConneted) {
+                    console.log("Data is received successfully");
+                }
+
+                else {
+                    console.log("Internet connection failed!");
+                }
+                }, 3000);
+
+            });
+
+        }
+
+        async function fetchData() {
+
+            try {
+                console.log("Data is fetching....!");
+
+                const data = await getData();
+
+                console.log(data);
+            }
+
+            catch (error) {
+                console.log("Error :", error);
+            }
+
+        }
+
+        fetchData();
+
+        
+    </script>
+</body>
+</html>
