@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>fetch</h1>
+    <button id="btn-1">get text</button>
+    <button id="btn-2">get json</button>
+    <button id="btn-3">get api</button>
+
+    <p id="output"></p>
+    <script>
+      document.querySelector("#btn-1").addEventListener("click", getText);
+      document.querySelector("#btn-2").addEventListener("click", getJson);
+      document.querySelector("#btn-3").addEventListener("click", getApi);
+
+      function getText() {
+        fetch("data.txt")
+          .then((res) => {
+            return res.text();
+          })
+          .then((data) => {
+            document.querySelector("#output").innerText = data;
+          })
+          .catch((err) => {
+            console.log("something went wrong");
+          });
+      }
+
+      function getJson() {
+        fetch("data.json")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            let output = "";
+            data.forEach((element) => {
+              output += `
+                <li>${element.name}</li>
+                <li>${element.age}</li>
+                <li>${element.city}</li>
+                `;
+              document.querySelector("#output").innerHTML = output;
+            });
+          })
+          .catch((err) => {
+            console.log("something went wrong");
+          });
+      }
+
+      function getApi() {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((res) => {
+            return res.json();
+          })
+          .then((data) => {
+            let output = "";
+            data.forEach((element) => {
+              output += `
+                <li>${element.id}</li>
+                <li>${element.name}</li>
+                <li>${element.email}</li>
+                `;
+              document.querySelector("#output").innerHTML = output;
+            });
+          })
+          .catch((err) => {
+            console.log("something went wrong");
+          });
+      }
+    </script>
+  </body>
+</html>
